@@ -27,3 +27,71 @@ to get the example projects running on your machine.
 
 - [**HuggingFace**](./huggingface.md) - free, no CC required
 - [**Render**](./render.md) - free, easier, CC required
+
+## Phase 4. Technical Modification
+
+Describe your small technical modification to the example project.
+
+Include:
+
+- What you changed
+- Why you chose that change
+- How you verified that it worked
+- What result, output, chart, metric, or behavior confirmed the change
+
+Compared with the example project,
+explain what is different and why the change matters.
+
+Was it easy, or surprisingly challenging and why do you think so?
+
+## Phase 5. Custom Project
+
+Describe your custom project and how you made your modeling decisions.
+
+Be specific about what changed from the example project.
+
+### Basis and Data
+
+Describe the dataset, input, or example you started with.
+
+Include:
+
+- The original example dataset or input
+- The data source
+- Why you chose it, kept it, or changed it
+- Any important limitations or assumptions
+
+### Example Model and Serving Approach
+
+Describe the model being served and how it is deployed.
+
+Include:
+
+- What the model predicts and what inputs it expects
+- How the model was trained and saved
+- How the API receives a request and returns a prediction
+- Where the model is deployed (local, Render, Hugging Face, or other)
+
+### Custom Application
+
+Describe your custom dataset, model, or API changes.
+
+Include:
+
+- What you changed from the example (dataset, model, endpoint, or inputs)
+- Why you made those changes
+- How you verified that your custom model or API works correctly
+
+### Summary
+
+Summarize your custom project.
+
+Include:
+
+- How you implemented your custom model or API
+- What results you got
+- What you learned
+- How well you exercised the skills covered in this project
+- What kinds of real problems you could apply these skills to in the future
+
+Display at least one image or screenshot showing your work.
