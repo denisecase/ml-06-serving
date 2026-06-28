@@ -6,6 +6,22 @@
 
 > Professional Python project: deploying and serving machine learning models.
 
+## Publishing Predictive Engines
+
+A machine learning model learns patterns from data.
+But, once trained, the model might just sit on a single computer.
+
+**Serving** a model means wrapping it in a small web service
+so anyone can send it a data request over the internet
+and get a prediction back.
+
+In this project, we train a model that
+identifies penguin species from physical measurements,
+then deploy it so you can ask it
+**what is the most likely penguin species**
+(given the measurements you provided in the request)
+from anywhere in the world.
+
 ## Project Description
 
 This project focuses on learning to deploy a trained model so others can use it.
@@ -326,6 +342,48 @@ Should return the predicted result as JSON data:
 Try sending some slightly different data - does it change the prediction?
 Study the data.
 Try to create a request that will answer with each of three different species (Adelie, Chinstrap, Gentoo)
+
+## Try a Web-based ML Penguin Predictor on Render
+
+Render hosts your ML model for free.
+It is easy to set up, but they require a credit card (even for the free options).
+The machines sleep so it can take a minute to wake up and answer.
+See the docs/ for more.
+
+Customize the request to see what species is predicted:
+
+```shell
+# PowerShell
+curl -X POST https://ml-penguin-predictor.onrender.com/predict `
+     -H "Content-Type: application/json" `
+     -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
+
+# macOS / Linux
+curl -X POST https://ml-penguin-predictor.onrender.com/predict \
+     -H "Content-Type: application/json" \
+     -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
+```
+
+## Try a Web-based ML Penguin Predictor on HuggingFace
+
+HuggingFace also hosts your ML model for free.
+It is a bit harder to set up (they use their own repo and we upload files via the browser).
+No credit card is required.
+See the docs/ for more.
+
+Customize the request to see what species is predicted:
+
+```shell
+# PowerShell
+curl -X POST https://denisecase-ml-penguin-predictor.hf.space/predict `
+     -H "Content-Type: application/json" `
+     -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
+
+# macOS / Linux
+curl -X POST https://denisecase-ml-penguin-predictor.hf.space/predict \
+     -H "Content-Type: application/json" \
+     -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
+```
 
 ## Findings and Visuals
 
