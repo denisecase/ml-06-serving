@@ -27,12 +27,16 @@ license: MIT
 
 abstract: >
   Machine learning project.
-  Learn to characterize machine learning problems.
+  Learn to deploy and serve a trained model,
+  save and load model artifacts, wrap a model in a FastAPI service,
+  and handle inputs, validation, and prediction requests.
 
 keywords:
   - data analytics
   - notebooks
   - machine learning
+  - model-serving
+  - fastapi
   - computer-science-education
   - data-analytics-education
   - professional-python
@@ -44,6 +48,8 @@ keywords:
   - python
   - jupyter
   - pandas
+  - scikit-learn
+  - joblib
   - git
   - github
   - open-source

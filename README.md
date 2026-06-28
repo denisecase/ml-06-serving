@@ -138,11 +138,13 @@ uvx pre-commit run --all-files
 # run the example module to verify the environment (.venv/)
 uv run python -m mlstudio.app_case
 
-# Train the model and save it to artifacts/model.joblib.
+# TASK 1: train the example model and save it to artifacts/model.joblib.
 uv run python -m mlstudio.model_builder_case
 
-# run the server
-uv run fastapi dev src/mlstudio/serve_case.py
+# CUSTOM: After completing your custom project,
+# Add the command to
+# train your custom model and save it to artifacts/model_yourname.joblib
+# uv run python -m mlstudio.model_builder_yourname
 
 # run common chores
 uv run ruff format .
@@ -212,6 +214,7 @@ Open a second terminal. Right-click to rename this terminal "server".
 Run:
 
 ```shell
+# Task 2. Start the example server
 uv run fastapi dev src/mlstudio/serve_case.py
 ```
 
@@ -275,9 +278,12 @@ means it is ready to receive requests:
 
 Open a third terminal.
 Right-click and rename it "client".
-Use this terminal to send a request to the server.
+
+Use this terminal to **send a request** to the server.
+
 We are making a request to the "/predict" endpoint.
-We'll provide information about a penguin and ask
+
+Provide information about a penguin and ask
 for the predicted species.
 
 Line continuation characters for long commands are different by operating system.
@@ -285,9 +291,17 @@ Line continuation characters for long commands are different by operating system
 - PowerShell uses a backtick.
 - Bash and zsh use a back slash
 
+The `curl` command means "check url".
+
+- X defines the type of request
+- H provides the requested response format (json data)
+- d provides a json object (a penguin where we want to get the species)
+
 ### Windows PowerShell
 
 ```shell
+# Task 3. Send a request to the server
+
 curl -X POST http://127.0.0.1:8000/predict `
      -H "Content-Type: application/json" `
      -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
@@ -296,6 +310,8 @@ curl -X POST http://127.0.0.1:8000/predict `
 ### macOS / Linux
 
 ```shell
+# Task 3. Send a request to the server
+
 curl -X POST http://127.0.0.1:8000/predict \
      -H "Content-Type: application/json" \
      -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
@@ -308,6 +324,8 @@ Should return the predicted result as JSON data:
 ```
 
 Try sending some slightly different data - does it change the prediction?
+Study the data.
+Try to create a request that will answer with each of three different species (Adelie, Chinstrap, Gentoo)
 
 ## Findings and Visuals
 

@@ -1,4 +1,4 @@
-"""serve_case.py - example.
+r"""serve_case.py - example.
 
 A FastAPI service that loads
 a trained penguin species classifier
@@ -17,15 +17,27 @@ Data Source:
 
 Terminal commands to run this service from the root project folder:
 
-    uvicorn mlstudio.serve_case:app --reload      # development (auto-reload)
-    uvicorn mlstudio.serve_case:app               # production
+uv run fastapi dev src/mlstudio/serve_case.py      # development (auto-reload)
+uv run fastapi run src/mlstudio/serve_case.py      # production
 
-Then send a request:
+- OR -
 
-    curl -X POST http://127.0.0.1:8000/predict \\
-         -H "Content-Type: application/json" \\
+uv run uvicorn mlstudio.serve_case:app --reload    # development (auto-reload)
+uv run uvicorn mlstudio.serve_case:app             # production
+
+Then send a request - open a new terminal and run
+
+If macOS or Linux, use \ line continuation characters:
+
+    curl -X POST http://127.0.0.1:8000/predict \
+         -H "Content-Type: application/json" \
          -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
 
+If Windows (PowerShell), use ` instead of \ for line continuation:
+
+    curl -X POST http://127.0.0.1:8000/predict `
+         -H "Content-Type: application/json" `
+         -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
 OBS:
   Don't edit this file - it should remain a working example.
   Copy it, rename it, and modify your copy if you want to experiment.
