@@ -43,6 +43,8 @@ from fastapi import FastAPI, HTTPException
 import joblib  # for serializing and deserializing the model
 from sklearn.ensemble import RandomForestClassifier
 
+__all__ = ["app", "predict_from_features", "predict"]
+
 # === Section 2. CONFIGURE LOGGER ===
 
 LOG: logging.Logger = get_logger("M06", level="DEBUG")
